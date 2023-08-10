@@ -8,9 +8,9 @@ plugins {
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
+val targetJavaVersion = 17
 val useKotlinStdlib = true
 val createShadowJar = true
-
 
 repositories {
     mavenCentral()
@@ -18,7 +18,6 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
-val targetJavaVersion = 17
 dependencies {
     if (useKotlinStdlib) {
         if (targetJavaVersion >= 8) {
@@ -61,9 +60,8 @@ tasks.withType<ProcessResources> {
     }
 }
 
-val createFatJar = true
 tasks.withType<Jar> {
-    if (createFatJar) {
+    if (createShadowJar) {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         from(sourceSets.main.get().output)
         dependsOn(configurations.runtimeClasspath)
