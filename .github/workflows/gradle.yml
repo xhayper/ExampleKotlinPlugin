@@ -2,7 +2,9 @@ name: Java CI with Gradle
 
 on:
   push:
+    branches: [ main ]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,4 +20,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: jar
-          path: build/libs/ExampleMod-*-SNAPSHOT.jar
+          path: build/libs/*.jar
