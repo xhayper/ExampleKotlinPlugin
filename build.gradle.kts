@@ -21,11 +21,11 @@ repositories {
 dependencies {
     if (useKotlinStdlib) {
         if (targetJavaVersion >= 8) {
-            compileOnly(kotlin("stdlib-jdk8"))
+            implementation(kotlin("stdlib-jdk8"))
         } else if (targetJavaVersion >= 7) {
-            compileOnly(kotlin("stdlib-jdk7"))
+            implementation(kotlin("stdlib-jdk7"))
         } else {
-            compileOnly(kotlin("stdlib"))
+            implementation(kotlin("stdlib"))
         }
     }
 
