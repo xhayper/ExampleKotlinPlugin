@@ -14,8 +14,8 @@ val createShadowJar = true
 
 repositories {
     mavenCentral()
+    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://oss.sonatype.org/content/groups/public/")
-    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
@@ -29,7 +29,7 @@ dependencies {
         }
     }
 
-    compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
 }
 
 java {
